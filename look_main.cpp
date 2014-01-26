@@ -1,5 +1,6 @@
 #include "look.h"
 #include "serial.h"
+#include "ps3.h"
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -15,6 +16,7 @@ int main()
   std::string device_location = "/dev/ttyUSB0";
 
   Look look(device_location);
+  PS3 ps3;
 
   while(1)
   {
