@@ -9,6 +9,19 @@
 #include <termios.h>
 #include <unistd.h>
 
+void AxesHandler(int axisNumber, int axisValue)
+{
+  if(axisNumber < 4 || axisNumber > 6)
+  {
+    printf("Axis Number: %d Axis Value: %d\n", axisNumber, axisValue);
+  }
+} 
+
+void ButtonHandler(int buttonNumber, int buttonValue)
+{
+  printf("Button Number: %d Button Value: %d\n", buttonNumber, buttonValue);
+} 
+
 int main() 
 {
   uint32_t data;
@@ -17,6 +30,8 @@ int main()
 
   Look look(device_location);
   PS3 ps3;
+  
+  ps3.init(&AxesHandler, &ButtonHandler);
 
   while(1)
   {
