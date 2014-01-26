@@ -7,8 +7,8 @@ class PS3 : public Controller
 {
   public:
     PS3();
-    void init(void (*axes_handler)(int,int), 
-              void (*button_handler)(int,int));
+    int init(void (*axes_handler)(int,int), 
+             void (*button_handler)(int,int));
 };
 
 #endif
